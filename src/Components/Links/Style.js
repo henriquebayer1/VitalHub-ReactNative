@@ -11,7 +11,7 @@ text-decoration: underline;
 
 `
 
-export const LinkBold= styled.Text`
+export const LinkBold = styled.Text`
 font-family: 'Montserrat_600SemiBold';
 margin-top: 10px;
 margin-left: 10px;
@@ -21,7 +21,7 @@ align-self: flex-start;
 text-decoration: underline;
 
 `
-export const LinkBoldN= styled.Text`
+export const LinkBoldN = styled.Text`
 font-family: 'Montserrat_600SemiBold';
 margin-top: 20px;
 margin-bottom: 20px;
@@ -46,4 +46,12 @@ margin-top: 30px;
 export const AccountText = styled.Text`
 font-family: 'Montserrat_600SemiBold';
 
+`
+
+export const CancelLink = styled.Text`
+font-family: 'Montserrat_500Medium';
+color: #C81D25;
+font-size: 12px;
+align-self: flex-end;
+margin-bottom: 5px;
 `

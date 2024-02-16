@@ -13,6 +13,7 @@ import { RedefinirSenha } from './src/Screens/RedefinirSenha/RedefinirSenha';
 import { VerifiqueSeuEmail } from './src/Screens/VerifiqueSeuEmail/VerifiqueSeuEmail';
 import { CriarConta } from './src/Screens/CriarConta/CriarConta';
 import { MedicoInsercaoProntuario } from './src/Screens/MedicoInsercaoProntuario/MedicoInsercaoProntuario';
+import { MedicoConsultas } from './src/Screens/MedicoConsultas/MedicoConsultas';
 
 
 
@@ -81,6 +82,11 @@ if (!fontLoaded && !fontError) {
     options={{title: "MedicoInsercaoProntuario"}}
     name='MedicoInsercaoProntuario'
     component={MedicoInsercaoProntuario}
+    />
+    <Stack.Screen
+    options={{title: "MedicoConsultas"}}
+    name='MedicoConsultas'
+    component={MedicoConsultas}
     />
 
    </Stack.Navigator>

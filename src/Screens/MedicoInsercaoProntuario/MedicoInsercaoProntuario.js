@@ -9,7 +9,7 @@ import { AlignMedicalRecord, AlignMedicalRecordForm, AlignMedicalRecordHeader, A
 
 export const MedicoInsercaoProntuario = () => {
     
-    return(
+    return (
       
         <ScrollView>
       
