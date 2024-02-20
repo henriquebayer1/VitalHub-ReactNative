@@ -198,11 +198,12 @@ flex-direction: row;
 
 export const Footer = styled.View`
 width: 100%;
-height: 60px;
+height: 65px;
 align-items: center;
 justify-content: center;
 flex-direction: row;
 background-color: #FFFFFF;
+margin-top: 70px;
 `
 
 export const FooterNav = styled.View`

@@ -7,19 +7,20 @@ import { Login } from './src/Screens/Login';
 import { Splash } from './src/Screens/Splash';
 import { useFonts,  } from 'expo-font';
 import {Montserrat_400Regular, Montserrat_500Medium, Montserrat_600SemiBold, Montserrat_700Bold} from "@expo-google-fonts/montserrat"
-import { Quicksand_400Regular, Quicksand_600SemiBold, Quicksand_500Medium} from "@expo-google-fonts/quicksand"
+import { Quicksand_400Regular, Quicksand_600SemiBold, Quicksand_500Medium, Quicksand_700Bold} from "@expo-google-fonts/quicksand"
 import { RecuperarSenha } from './src/Screens/RecuperarSenha/RecuperarSenha';
 import { RedefinirSenha } from './src/Screens/RedefinirSenha/RedefinirSenha';
 import { VerifiqueSeuEmail } from './src/Screens/VerifiqueSeuEmail/VerifiqueSeuEmail';
 import { CriarConta } from './src/Screens/CriarConta/CriarConta';
 import { MedicoInsercaoProntuario } from './src/Screens/MedicoInsercaoProntuario/MedicoInsercaoProntuario';
 import { MedicoConsultas } from './src/Screens/MedicoConsultas/MedicoConsultas';
+import { SelecionarClinica } from './src/Screens/SelecionarClinica/SelecionarClinica';
 
 
 
 export default function App() {
 const Stack = createNativeStackNavigator();
-const [fontLoaded, fontError] = useFonts({Montserrat_600SemiBold, Montserrat_500Medium, Montserrat_700Bold, Quicksand_400Regular, Quicksand_600SemiBold, Quicksand_500Medium})
+const [fontLoaded, fontError] = useFonts({Montserrat_600SemiBold, Montserrat_500Medium, Montserrat_700Bold, Quicksand_400Regular, Quicksand_600SemiBold, Quicksand_500Medium, Quicksand_700Bold})
 
 
 if (!fontLoaded && !fontError) {
@@ -83,11 +84,18 @@ if (!fontLoaded && !fontError) {
     name='MedicoInsercaoProntuario'
     component={MedicoInsercaoProntuario}
     />
+
     <Stack.Screen
     options={{title: "MedicoConsultas"}}
     name='MedicoConsultas'
     component={MedicoConsultas}
     />
+
+  <Stack.Screen
+  options={{title: "SelecionarClinica"}}
+  name="SelecionarClinica"
+  component={SelecionarClinica}
+  />
 
    </Stack.Navigator>
 

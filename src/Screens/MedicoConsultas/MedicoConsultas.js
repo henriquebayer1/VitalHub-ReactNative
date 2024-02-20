@@ -13,6 +13,8 @@ import { CancelLink, LinkBoldN } from "../../Components/Links/Style"
 import { AntDesign } from '@expo/vector-icons';
 import CalendarList from '../../Components/Calendar/CalendarList';
 import { FontAwesome5 } from '@expo/vector-icons';
+import { CancelarConsulta } from '../../Components/CancelarConsulta/CancelarConsulta';
+import { InserirProntuario } from '../../Components/InserirProntuario/InserirProntuario';
 
 
 
@@ -22,12 +24,10 @@ return(
 
 
 
-
-<ScrollView>
       
       <Container>
-    
-       
+
+     
     <HeaderBackground>
       <AlignMedicalAppointment>
         <MedicalAppointmentImage source={require("../../Assets/MedicalAppointmentDoctor.png")}/>
@@ -84,7 +84,7 @@ return(
       </AlignMedicalAppointment>
       <CancelLink>Cancelar</CancelLink>
     </PatientCard>
-          
+
 <Footer>
   <FooterNav>
 
@@ -103,7 +103,7 @@ return(
 
 
         </Container>
-         </ScrollView>
+         
       
 </>
 
