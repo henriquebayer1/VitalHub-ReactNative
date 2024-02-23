@@ -6,6 +6,7 @@ import { CancelLink, LinkBoldN } from "../../Components/Links/Style"
 import { AlignBoxClinicComponents, AlignBoxClinicText, AlignBoxClinicTextEnd, AlignBoxClinicTextStart, BoxClinicDayBox, BoxClinicDayText, BoxClinicLocation, BoxClinicRateBox, BoxClinicRateText, BoxClinicSelect, BoxClinicTitle } from "./Style"
 import { FontAwesome6 } from '@expo/vector-icons';
 import { Fontisto } from '@expo/vector-icons';
+import { AgendarConsulta } from "../../Components/AgendarConsulta/AgendarConsulta"
 
 
 

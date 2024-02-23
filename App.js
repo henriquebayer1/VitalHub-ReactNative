@@ -15,6 +15,7 @@ import { CriarConta } from './src/Screens/CriarConta/CriarConta';
 import { MedicoInsercaoProntuario } from './src/Screens/MedicoInsercaoProntuario/MedicoInsercaoProntuario';
 import { MedicoConsultas } from './src/Screens/MedicoConsultas/MedicoConsultas';
 import { SelecionarClinica } from './src/Screens/SelecionarClinica/SelecionarClinica';
+import { SelecionarMedico } from './src/Screens/SelecionarMedico/SelecionarMedico';
 
 
 
@@ -95,6 +96,12 @@ if (!fontLoaded && !fontError) {
   options={{title: "SelecionarClinica"}}
   name="SelecionarClinica"
   component={SelecionarClinica}
+  />
+
+  <Stack.Screen
+  options={{title: "SelecionarMedico"}}
+  name="SelecionarMedico"
+  component={SelecionarMedico}
   />
 
    </Stack.Navigator>

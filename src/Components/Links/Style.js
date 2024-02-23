@@ -23,7 +23,7 @@ text-decoration: underline;
 `
 export const LinkBoldN = styled.Text`
 font-family: 'Montserrat_600SemiBold';
-margin-top: 20px;
+margin-top: 15px;
 margin-bottom: 20px;
 margin-left: 10px;
 color: #496BBA;
