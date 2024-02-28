@@ -5,9 +5,10 @@ import { Input } from "../../Components/Input/Style"
 import { LinkBoldN } from "../../Components/Links/Style"
 import { Logo, MedicalRecordImage } from "../../Components/Logo/Style"
 import { AlignMedicalRecord, AlignMedicalRecordForm, AlignMedicalRecordHeader, AlignMedicalRecordText, InputAlignMedicalRecordForm, InputMedicalRecord, LabelMedicalRecordForm, TextMedicalRecord, TitleMedicalRecord } from "./Style"
+import { ButtonCard } from "../MedicoConsultas/Style"
 
 
-export const MedicoInsercaoProntuario = () => {
+export const MedicoInsercaoProntuario = ({hideModal,}) => {
     
     return (
       
@@ -71,9 +72,9 @@ export const MedicoInsercaoProntuario = () => {
     </ButtonLogin>
     </AlignMedicalRecordForm>
 
-    
+    <ButtonCard onPress={hideModal}>
     <LinkBoldN>Cancelar</LinkBoldN>
-
+    </ButtonCard>
     
   </Container>
    </ScrollView>

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 
 export const BoxSelectDoctorSelected = styled.View`
@@ -12,16 +12,25 @@ align-items: center;
 justify-content: center;
 margin: 15px 0px 15px 0px;
 `
-export const BoxSelectDoctorNormal = styled.View`
+export const BoxSelectDoctorN = styled.View`
 background-color: #FFFFFF;
 height: 102px;
 width: 90%;
 border-radius: 5px;
 box-shadow: 4px 15px 4px ;
 align-items: center;
-justify-content: flex-start;
+justify-content: center;
 margin: 15px 0px 15px 0px;
-`
+${(props) =>
+    props.clickButton === true && props.doctorId == props.index
+      ? css`
+          border: 2px solid red;
+        `
+      : css`
+          border: none
+        `}
+`;
+
 
 export const AlignBoxSelectDoctorComponents = styled.View`
 width: 90%;

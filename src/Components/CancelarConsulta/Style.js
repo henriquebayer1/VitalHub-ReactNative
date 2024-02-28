@@ -8,7 +8,7 @@ gap: 25px;
 align-items: center;
 justify-content: center;
 border-radius: 10px;
-
+margin: 15px 0px 15px 0px;
 `
 
 export const BoxCancelText = styled.Text`

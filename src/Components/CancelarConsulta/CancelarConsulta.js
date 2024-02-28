@@ -1,10 +1,11 @@
+import { ButtonCard } from "../../Screens/MedicoConsultas/Style"
 import { ButtonLogin, ButtonTitle } from "../Buttons/Style"
 import { LinkBoldN } from "../Links/Style"
 import { Title } from "../Titles/Style"
 import { BoxCancel, BoxCancelText } from "./Style"
 
 
-export const CancelarConsulta = () => {
+export const CancelarConsulta = ({hideModal}) => {
 return(
 
     <BoxCancel>
@@ -19,8 +20,9 @@ return(
             <ButtonTitle>Confirmar</ButtonTitle>
         </ButtonLogin>
 
+        <ButtonCard onPress={hideModal}>
         <LinkBoldN>Cancelar</LinkBoldN>
-
+        </ButtonCard>
     </BoxCancel>
 
 

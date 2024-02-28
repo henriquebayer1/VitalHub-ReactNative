@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled, { css } from "styled-components";
 import { LinearGradient } from "expo-linear-gradient"
 
 
@@ -18,10 +18,10 @@ justify-content: center;
 border-radius: 8px;
 box-shadow: 0px 15px 4px;
 `
-export const PatientCard = styled.View`
-width: 90%;
+export const PatientCardBox = styled.View`
+width: 100%;
 height: 144px;
-background-color: white;
+background-color: #FFFFFF;
 padding: 22px;
 padding-bottom: 20px;
 flex-direction: row;
@@ -34,7 +34,7 @@ margin: 100px 0px 30px 0px;
 export const PatientCardTimeBox = styled.View`
 width: 100px;
 height: 26px;
-background-color: #E8FCFD;
+background-color: ${({ situacao }) => situacao === "pendente" ? "#dffdff" : "#F1F0F5"};
 flex-direction: row;
 align-items: center;
 border-radius: 5px;
@@ -42,7 +42,7 @@ gap: 8px;
 
 `
 export const TimeBoxText = styled.Text`
-color: #49B3BA;
+color: ${({ situacao }) => (situacao === "pendente" ? "#49b3ba" : "#8C8A97")};
 font-size: 14px;
 font-family: 'Quicksand_600SemiBold';
 
@@ -94,7 +94,7 @@ text-align: justify;
 `
 
 export const AlignMedicalAppointment = styled.View`
-width: 90%;
+width: 80%;
 align-items: center;
 gap: 10px;
 margin-top: 20px;
@@ -152,23 +152,40 @@ align-self: flex-start;
 export const ButtonConsultas = styled.TouchableOpacity`
 width: 100px;
 height: 41px;
-background-color: #fbfbfb;
 padding: 12px 8px 12px 8px;
 border-radius: 5px;
 border: 2px solid #607EC5;
 justify-content: center;
 flex-direction: row;
 gap: 10px;
-`
+${(props) =>
+    props.clickButton
+      ? css`
+          background-color: #496bba;
+        `
+      : css`
+          background-color: transparent;
+          border: 2px solid #607ec5;
+        `}
+`;
+
 
 export const ButtonTitleConsultas = styled.Text`
 font-family: 'Montserrat_600SemiBold';
-color: #607EC5;
 font-size: 12px;
 text-align: center;
 flex-direction: row;
+${(props) =>
+    props.clickButton
+      ? css`
+          color: #fbfbfb;
+        `
+      : css`
+          color: #607ec5;
+        `}
+`;
 
-`
+
 export const ButtonConsultasBlue = styled.TouchableOpacity`
 width: 100px;
 height: 41px;
@@ -232,3 +249,15 @@ font-family: 'Quicksand_500Medium';
 
 
 `
+
+export const ButtonCard = styled.TouchableOpacity`
+
+`;
+
+export const TextButtonCard = styled.Text`
+  color: ${(props) => props.situacao == "pendente" ? "#c81d25" : "#344f8f"} ;
+  font-size: 14px;
+  text-decoration: none;
+  font-family: "Montserrat_500Medium";
+ 
+`;

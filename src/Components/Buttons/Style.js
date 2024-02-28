@@ -39,3 +39,15 @@ text-transform: uppercase;
 flex-direction: row;
 
 `
+
+export const ButtonAgendarConsulta = styled.TouchableOpacity`
+width: 60px;
+height: 60px;
+border-radius: 7px;
+justify-content: center;
+align-items: center;
+background-color: #49B3BA;
+position: fixed;
+left: 130px;
+top: 50px;
+`;

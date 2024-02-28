@@ -21,6 +21,16 @@ align-self: flex-start;
 text-decoration: underline;
 
 `
+export const LinkBoldPatient = styled.Text`
+font-family: 'Montserrat_500Medium';
+margin-top: 10px;
+color: ${(props) => props.situacao == "pendente" ? "#c81d25" : "#344f8f"} ;
+font-size: 12px;
+margin-top: 80px;
+
+`
+
+
 export const LinkBoldN = styled.Text`
 font-family: 'Montserrat_600SemiBold';
 margin-top: 15px;

@@ -5,6 +5,7 @@ import { Container } from '../../Components/Container/Style';
 import { AgePatientCard, AlignMedicalAppointment, AlignMedicalAppointmentForm, AlignMedicalAppointmentText, AlignPatientCardText, ButtonConsultas, ButtonConsultasAlign, ButtonConsultasBlue, ButtonTitleConsultas, ButtonTitleConsultasBlue, Footer, FooterBox, FooterComponent, FooterComponentText, FooterNav, HeaderBackground,
 InputAlignMedicalAppointmentForm, InputMedicalAppointment, LabelMedicalAppointmentForm, MedicalAppointmentImage, 
 PatientCard, 
+PatientCardBox, 
 PatientCardTimeBox, 
 TextMedicalAppointment, TimeBoxText, TitleMedicalAppointment, TitlePatientCard, TypePatientCard } from './Style';
 import { ButtonGoogle, ButtonLogin, ButtonTitle, ButtonTitleGoogle } from "../../Components/Buttons/Style"
@@ -15,12 +16,48 @@ import CalendarList from '../../Components/Calendar/CalendarList';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { CancelarConsulta } from '../../Components/CancelarConsulta/CancelarConsulta';
 import { InserirProntuario } from '../../Components/InserirProntuario/InserirProntuario';
+import { ButtonDocConsult } from '../../Components/Buttons/ButtonDocConsult';
+import { useState } from 'react';
+import { ListComponent } from '../../Components/List/List';
+import { PatientCardComponent } from '../../Components/PatientCard/PatientCard';
+import { MedicoInsercaoProntuario } from '../MedicoInsercaoProntuario/MedicoInsercaoProntuario';
+import { ButtonSchedulleConsult } from '../../Components/Buttons/ButtonSchedulleConsult';
 
 
 
-export const MedicoConsultas = () => {
+export const MedicoConsultas = ({navigation}) => {
+
+
+  const Consultas = [
+    { id: 1, nome: "Lucas Lacerda", situacao: "pendente" },
+    { id: 2, nome: "Uiara Ambrosio", situacao: "cancelado" },
+    { id: 3, nome: "Silvia Ribeiro", situacao: "realizado" },
+    { id: 4, nome: "Tadeu LACERDA", situacao: "pendente" },
+  ];
+  
+
+  const [statusLista, setStatusLista] = useState("");
+  const [activeIcon, setActiveIcon] = useState("agenda"); // Estado para armazenar o ícone ativo
+
+  //states para os Modais
+  const [showModalCancel, setShowModalCancel] = useState(false);
+  const [showModalAppointment, setShowModalAppointment] = useState(false);
+
+
+
+
 return(
 <>
+{showModalAppointment ? 
+
+(<>
+ <MedicoInsercaoProntuario
+ hideModal={() => {setShowModalAppointment(false)}}
+ />
+
+</>) : 
+(<></>)}
+
 
 
 
@@ -50,41 +87,64 @@ return(
 <CalendarList/>
 
 <ButtonConsultasAlign>
-  <ButtonConsultasBlue>
-        <ButtonTitleConsultasBlue>Agendadas</ButtonTitleConsultasBlue>
-  </ButtonConsultasBlue>
+          <ButtonDocConsult 
+          textButton={"Pendentes"}
+          clickButton={statusLista === "pendente"}
+          onPress={() => {setStatusLista("pendente");}}
+          >
+            <ButtonTitleConsultas clickButton={statusLista === "realizado"}>Pendente</ButtonTitleConsultas>
+          </ButtonDocConsult>
 
-  <ButtonConsultas>
-        <ButtonTitleConsultas>Realizadas</ButtonTitleConsultas>
-    </ButtonConsultas>
-    
-    <ButtonConsultas>
-        <ButtonTitleConsultas>Canceladas</ButtonTitleConsultas>
-    </ButtonConsultas>
+ <ButtonDocConsult
+ textButton={"Realizados"}
+ clickButton={statusLista === "realizado"}
+ onPress={() => {
+   setStatusLista("realizado");
+ }}
+ > 
+      <ButtonTitleConsultas clickButton={statusLista === "realizado"}>Realizados</ButtonTitleConsultas>
+  </ButtonDocConsult>
+
+<ButtonDocConsult
+ textButton={"Cancelados"}
+ clickButton={statusLista === "cancelado"}
+ onPress={() => {
+   setStatusLista("cancelado");
+ }}
+ >
+      <ButtonTitleConsultas clickButton={statusLista === "realizado"}>Realizados</ButtonTitleConsultas>
+  </ButtonDocConsult>
 </ButtonConsultasAlign>
 
-    <PatientCard>
-      <AlignMedicalAppointment>
-          <MedicalAppointmentImage source={require("../../Assets/MedicalAppointmentPatient.png")}/>
-
-        <AlignMedicalAppointmentText>
-             <TitleMedicalAppointment>Richard Kosta</TitleMedicalAppointment>
-
-          <AlignPatientCardText>
-              <AgePatientCard>28 anos</AgePatientCard>
-              <TypePatientCard>Urgencia</TypePatientCard>
-          </AlignPatientCardText>
-           
-          <PatientCardTimeBox>
-              <AntDesign name="clockcircle" size={24} color="#49B3BA" />
-              <TimeBoxText>15:00</TimeBoxText>
-          </PatientCardTimeBox>
-        </AlignMedicalAppointmentText>
+<ListComponent
+        data={Consultas}
+        keyExtractor={(item) => item.id}
+        renderItem={({ item }) =>
+          statusLista === item.situacao && (
+            <PatientCardComponent 
+              nome={item.nome}
+              situacao={item.situacao}
+              onPressCancel={() => setShowModalCancel(true)}
+              onPressAppointment={() => setShowModalAppointment(true)}
+            />
+          )
+        }
+      />
       
-      </AlignMedicalAppointment>
-      <CancelLink>Cancelar</CancelLink>
-    </PatientCard>
+{showModalCancel ? 
 
+(<>
+ <CancelarConsulta
+ hideModal={() => {setShowModalCancel(false)}}
+ />
+
+</>) : 
+(<></>)}
+
+{statusLista === "pendente" ?  (<><ButtonSchedulleConsult
+onPress={() => {navigation.navigate("SelecionarMedico")}}
+/></>):
+(<></>)}
 <Footer>
   <FooterNav>
 
