@@ -4,55 +4,68 @@ import { Title } from "../../Components/Titles/Style"
 import { ButtonLogin, ButtonTitle } from "../../Components/Buttons/Style"
 import { CancelLink, LinkBoldN } from "../../Components/Links/Style"
 import { AlignBoxClinicComponents, AlignBoxClinicText, AlignBoxClinicTextEnd, AlignBoxClinicTextStart, BoxClinicDayBox, BoxClinicDayText, BoxClinicLocation, BoxClinicRateBox, BoxClinicRateText, BoxClinicSelect, BoxClinicTitle } from "./Style"
-import { FontAwesome6 } from '@expo/vector-icons';
-import { Fontisto } from '@expo/vector-icons';
 import { AgendarConsulta } from "../../Components/AgendarConsulta/AgendarConsulta"
+import { ButtonCard } from "../MedicoConsultas/Style"
+import { SelectClinicCard } from "../../Components/SelectClinicCard/SelectClinicCard"
+import { ListComponent } from "../../Components/List/List"
+import { useState } from "react"
 
 
 
-export const SelecionarClinica = () => {return(
-<ScrollView>
+export const SelecionarClinica = ({navigation}) => {
+    
+    const Clinicas = [
+        { id: 0, name: "Clinica 1", local: "Sao Paulo, SP", rate: "4,1" },
+        { id: 1, name: "Clinica 2", local: "Sao Paulo, SP", rate: "4,2" },
+        { id: 2, name: "Clinica 3", local: "Sao Paulo, SP", rate: "4,3" },
+        { id: 3, name: "Clinica 4", local: "Sao Paulo, SP", rate: "4,4" },
+      ];
+    
+
+      const [selectClinic, setSelectClinic] = useState();
+      const [idConfirm, setIdConfirm] = useState();
+
+    return(
+
 <Container>
 
 <Title>Selecionar Clinica</Title>
 
-<BoxClinicSelect>
-    <AlignBoxClinicComponents>
-        <AlignBoxClinicTextStart>
-            <BoxClinicTitle>Clinica Natureh</BoxClinicTitle>
-            <BoxClinicLocation>Sao Paulo, SP</BoxClinicLocation>
-        </AlignBoxClinicTextStart>
-
-      <AlignBoxClinicTextEnd>
-        <BoxClinicRateBox>
-            <Fontisto name="star" size={16} color="#F9A620" />
-            <BoxClinicRateText>4,5</BoxClinicRateText>
-        </BoxClinicRateBox>
-
-        <BoxClinicDayBox>
-            <FontAwesome6 name="calendar-day" size={12} color="#49B3BA" />
-            <BoxClinicDayText>Seg-Sex</BoxClinicDayText>
-        </BoxClinicDayBox>
-        </AlignBoxClinicTextEnd>
-   
-    </AlignBoxClinicComponents>
-
-   
-</BoxClinicSelect>
+<ListComponent
+        data={Clinicas}
+        keyExtractor={(item) => item.id}
+        renderItem={({item}) =>
+          (
+            <SelectClinicCard
+              clinicId={item.id}
+              index={idConfirm}
+              name={item.name}
+              local={item.local}
+              rate={item.rate}
+              clickButton={selectClinic === true}
+              onPress={() => {setSelectClinic(true); setIdConfirm(item.id)}}
+             
+            />
+          )
+        }
+      />
 
 
 
 
 
-<ButtonLogin title="">
-    <ButtonTitle>Continuar</ButtonTitle>
-</ButtonLogin>
+<ButtonLogin onPress={() => {navigation.navigate("SelecionarMedico")}}>
+      <ButtonTitle>Confirmar</ButtonTitle>
+    </ButtonLogin>
+    
 
-        <LinkBoldN>Cancelar</LinkBoldN>
+    <ButtonCard onPress={() => {navigation.navigate("MedicoConsultas")}}>
+    <LinkBoldN>Cancelar</LinkBoldN>
+    </ButtonCard>
 
 
 </Container>
-</ScrollView>
+
 
 
 )}

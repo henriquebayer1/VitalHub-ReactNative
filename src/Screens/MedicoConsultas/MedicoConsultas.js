@@ -22,6 +22,7 @@ import { ListComponent } from '../../Components/List/List';
 import { PatientCardComponent } from '../../Components/PatientCard/PatientCard';
 import { MedicoInsercaoProntuario } from '../MedicoInsercaoProntuario/MedicoInsercaoProntuario';
 import { ButtonSchedulleConsult } from '../../Components/Buttons/ButtonSchedulleConsult';
+import { ModalAgendarConsulta } from '../../Components/ModalAgendarConsulta/ModalAgendarConsulta';
 
 
 
@@ -44,11 +45,25 @@ export const MedicoConsultas = ({navigation}) => {
   const [showModalAppointment, setShowModalAppointment] = useState(false);
 
 
-
+  const [statusLevel, setStatusLevel] = useState(false);
+  const [statusLevel2, setStatusLevel2] = useState(false);
+  const [statusLevel3, setStatusLevel3] = useState(false);
 
 return(
 <>
-{showModalAppointment ? 
+<Container>
+
+  <ModalAgendarConsulta
+  clickButton1={statusLevel}
+  clickButton2={statusLevel2 }
+  clickButton3={statusLevel3 }
+  onPress1={() => {setStatusLevel(true)}}
+  onPress2={() => {setStatusLevel2(true)}}
+  onPress3={() => {setStatusLevel3(true)}}
+
+ 
+  />
+{/* {showModalAppointment ? 
 
 (<>
  <MedicoInsercaoProntuario
@@ -88,7 +103,7 @@ return(
 
 <ButtonConsultasAlign>
           <ButtonDocConsult 
-          textButton={"Pendentes"}
+          textButton={"Agendadas"}
           clickButton={statusLista === "pendente"}
           onPress={() => {setStatusLista("pendente");}}
           >
@@ -142,10 +157,19 @@ return(
 (<></>)}
 
 {statusLista === "pendente" ?  (<><ButtonSchedulleConsult
-onPress={() => {navigation.navigate("SelecionarMedico")}}
+onPress={() => {navigation.navigate("SelecionarClinica")}}
 /></>):
 (<></>)}
-<Footer>
+ */}
+
+
+
+
+
+
+
+
+{/* <Footer>
   <FooterNav>
 
     <FooterComponent>
@@ -159,7 +183,7 @@ onPress={() => {navigation.navigate("SelecionarMedico")}}
     <FontAwesome5 name="user-circle" size={22} color="#4E4B59" />
 
   </FooterNav>
-</Footer>
+</Footer> */}
 
 
         </Container>

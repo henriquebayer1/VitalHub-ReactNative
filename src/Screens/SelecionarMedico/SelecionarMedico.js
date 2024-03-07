@@ -6,9 +6,11 @@ import { LinkBoldN } from "../../Components/Links/Style"
 import { useState } from "react"
 import { DoctorCard } from "../../Components/DoctorCard/DoctorCard"
 import { ListComponent } from "../../Components/List/List"
+import { ButtonCard } from "../MedicoConsultas/Style"
+import { ModalAgendarConsulta } from "../../Components/ModalAgendarConsulta/ModalAgendarConsulta"
 
 
-export const SelecionarMedico = () => {
+export const SelecionarMedico = ({navigation}) => {
 
     const Medicos = [
         { id: 0, nome: "Lucas Lacerda", especialidade: "Dermatologa, Esteticista" },
@@ -26,13 +28,12 @@ const [idConfirm, setIdConfirm] = useState();
 
 return(
 
-    
         <Container>
-
+ 
         <ListComponent
         data={Medicos}
         keyExtractor={(item) => item.id}
-        renderItem={({ item, index }) =>
+        renderItem={({item}) =>
           (
             <DoctorCard
               doctorId={item.id}
@@ -46,6 +47,15 @@ return(
           )
         }
       />
+
+<ButtonLogin title="">
+      <ButtonTitle>Confirmar</ButtonTitle>
+    </ButtonLogin>
+    
+
+    <ButtonCard onPress={() => {navigation.navigate("MedicoConsultas")}}>
+    <LinkBoldN >Cancelar</LinkBoldN>
+    </ButtonCard>
             
 
 

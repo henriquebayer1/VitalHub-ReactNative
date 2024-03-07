@@ -16,6 +16,9 @@ import { MedicoInsercaoProntuario } from './src/Screens/MedicoInsercaoProntuario
 import { MedicoConsultas } from './src/Screens/MedicoConsultas/MedicoConsultas';
 import { SelecionarClinica } from './src/Screens/SelecionarClinica/SelecionarClinica';
 import { SelecionarMedico } from './src/Screens/SelecionarMedico/SelecionarMedico';
+import { SelecionarData } from './src/Screens/SelecionarData/SelecionarData';
+import { Main } from './src/Screens/Main/Main';
+
 
 
 
@@ -37,6 +40,21 @@ if (!fontLoaded && !fontError) {
 
    <Stack.Navigator>
 
+   <Stack.Screen
+    options={{title: "CriarConta"}}
+    name='CriarConta'
+    component={CriarConta}
+    />
+
+   <Stack.Screen
+    //Titulo da tela
+    options={{title: "Main"}}
+    //nome da tela
+    name="Main"
+    //Componente da Tela
+    component={Main}
+    />
+
     <Stack.Screen
     //Titulo da tela
     options={{title: "Navegacao"}}
@@ -46,11 +64,7 @@ if (!fontLoaded && !fontError) {
     component={Navegacao}
     />
 
-    <Stack.Screen
-    options={{title: "Login"}}
-    name='Login'
-    component={Login}
-    />
+    
     <Stack.Screen
     options={{title: "Splash"}}
     name='Splash'
@@ -74,11 +88,7 @@ if (!fontLoaded && !fontError) {
     component={VerifiqueSeuEmail}
     />
 
-    <Stack.Screen
-    options={{title: "CriarConta"}}
-    name='CriarConta'
-    component={CriarConta}
-    />
+   
 
     <Stack.Screen
     options={{title: "MedicoInsercaoProntuario"}}
@@ -86,12 +96,7 @@ if (!fontLoaded && !fontError) {
     component={MedicoInsercaoProntuario}
     />
 
-    <Stack.Screen
-    options={{title: "MedicoConsultas"}}
-    name='MedicoConsultas'
-    component={MedicoConsultas}
-    />
-
+   
   <Stack.Screen
   options={{title: "SelecionarClinica"}}
   name="SelecionarClinica"
@@ -103,6 +108,13 @@ if (!fontLoaded && !fontError) {
   name="SelecionarMedico"
   component={SelecionarMedico}
   />
+  <Stack.Screen
+  options={{title: "SelecionarData"}}
+  name="SelecionarData"
+  component={SelecionarData}
+  />
+
+
 
    </Stack.Navigator>
 

@@ -11,6 +11,13 @@ text-decoration: underline;
 
 `
 
+export const LinkAccount = styled(LinkMedium)`
+  margin-top: 0;
+  color: #4d659d;
+  font-family: "Montserrat_600SemiBold";
+  margin-left: 5px;
+`;
+
 export const LinkBold = styled.Text`
 font-family: 'Montserrat_600SemiBold';
 margin-top: 10px;

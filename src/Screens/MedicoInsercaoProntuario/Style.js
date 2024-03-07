@@ -52,7 +52,7 @@ margin-top: 15px;
 export const InputAlignMedicalRecordForm = styled.View`
 width: 90%;
 align-content: center;
-
+border: 1px solid red;
 
 `
 export const LabelMedicalRecordForm = styled.Text`

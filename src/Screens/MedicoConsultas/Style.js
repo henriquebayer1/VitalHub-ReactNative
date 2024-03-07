@@ -251,6 +251,7 @@ font-family: 'Quicksand_500Medium';
 `
 
 export const ButtonCard = styled.TouchableOpacity`
+margin-top: 10px;
 
 `;
 

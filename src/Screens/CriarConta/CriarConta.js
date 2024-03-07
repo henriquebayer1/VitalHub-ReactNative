@@ -6,8 +6,21 @@ import { Logo } from '../../Components/Logo/Style';
 import { Input } from '../../Components/Input/Style';
 import { ButtonLogin, ButtonTitle } from '../../Components/Buttons/Style';
 import { LinkBoldN } from '../../Components/Links/Style';
+import { MedicoConsultas } from '../MedicoConsultas/MedicoConsultas';
 
-export const CriarConta = () => {
+
+export const CriarConta = ({navigation}) => {
+
+  async function Login() {
+    try {
+
+        navigation.replace("Main")
+        
+    } catch (error) {
+        
+    }
+}
+
 return (
 
     <Container>
@@ -33,7 +46,7 @@ return (
     <Input placeholder="Confirmar senha" />
 
     <ButtonLogin title="">
-      <ButtonTitle>Cadastrar</ButtonTitle>
+      <ButtonTitle onPress={Login}>Cadastrar</ButtonTitle>
     </ButtonLogin>
     </AlignCreateAccountForm>
 

@@ -7,3 +7,7 @@ align-items: center;
 background-color: #fafafa;
 
 `
+
+export const ContainerSelectDate = styled(Container)`
+   padding-top: 80px;
+`

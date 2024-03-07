@@ -24,10 +24,10 @@ margin: 15px 0px 15px 0px;
 ${(props) =>
     props.clickButton === true && props.doctorId == props.index
       ? css`
-          border: 2px solid red;
+          border: 2px solid #496BBA;
         `
       : css`
-          border: none
+          border: none;
         `}
 `;
 

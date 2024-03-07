@@ -1,5 +1,21 @@
 import styled from "styled-components";
 
+export const Button = styled.TouchableOpacity`
+  width: 90%;
+  height: 44px;
+  background-color: #496bba;
+  justify-content: center;
+  align-items: center;
+  border-color: #496bba;
+  border-radius: 5px;
+  margin-top: 15px;
+`;
+
+
+export const ButtonRegister = styled(Button)`
+  margin-top: 30px;
+`;
+
 export const ButtonLogin = styled.TouchableOpacity`
 width: 90%;
 height: 44px;

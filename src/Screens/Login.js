@@ -7,12 +7,21 @@ import { Input } from "../Components/Input/Style"
 import { AccountText, ContentAccount, LinkBold, LinkMedium } from "../Components/Links/Style"
 import { ButtonGoogle, ButtonLogin, ButtonTitle, ButtonTitleGoogle } from "../Components/Buttons/Style"
 import { AntDesign } from '@expo/vector-icons';
+import { ModalAgendarConsulta } from "../Components/ModalAgendarConsulta/ModalAgendarConsulta"
 
-export const Login = () =>  {
+export const Login = ({navigation}) =>  {
+
+
+
+
+
 return (
 
     
 <Container>
+
+
+
             <Text>Login Screen</Text>
 
             <Logo source={require("../Assets/Logo.png")}/>

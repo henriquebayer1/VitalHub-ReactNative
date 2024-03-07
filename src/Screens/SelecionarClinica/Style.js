@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 
 
@@ -22,7 +22,16 @@ box-shadow: 4px 15px 4px ;
 align-items: center;
 justify-content: space-evenly;
 margin: 15px 0px 15px 0px;
-`
+${(props) =>
+    props.clickButton === true && props.clinicId == props.index
+      ? css`
+          border: 2px solid #496BBA;
+        `
+      : css`
+          border: none
+        `}
+`;
+
 export const AlignBoxClinicTextStart = styled.View`
 align-items: flex-start;
 gap: 5px;

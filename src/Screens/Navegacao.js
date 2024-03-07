@@ -45,6 +45,10 @@ return (
             title="SelecionarMedico"
             onPress={() => {navigation.navigate("SelecionarMedico")}}
             />
+            <Button
+            title="SelecionarData"
+            onPress={() => {navigation.navigate("SelecionarData")}}
+            />
 
         </View>
     )}
