@@ -24,6 +24,9 @@ padding: 12px 8px 12px 8px;
 border-radius: 5px;
 margin-top: 10px;
 `
+export const ButtonLoginModalAgendarConsulta = styled(ButtonLogin)`
+margin-top: 110px;
+`
 
 export const ButtonTitle = styled.Text`
 font-family: 'Montserrat_700Bold';

@@ -1,6 +1,6 @@
 import { Text } from "react-native"
 import { Button, View } from "react-native"
-import { Container } from "../Components/Container/Style"
+import { Container, ContainerLogin } from "../Components/Container/Style"
 import { Logo } from "../Components/Logo/Style"
 import { Title } from "../Components/Titles/Style"
 import { Input } from "../Components/Input/Style"
@@ -8,11 +8,20 @@ import { AccountText, ContentAccount, LinkBold, LinkMedium } from "../Components
 import { ButtonGoogle, ButtonLogin, ButtonTitle, ButtonTitleGoogle } from "../Components/Buttons/Style"
 import { AntDesign } from '@expo/vector-icons';
 import { ModalAgendarConsulta } from "../Components/ModalAgendarConsulta/ModalAgendarConsulta"
+import { ButtonCard } from "./MedicoConsultas/Style"
 
 export const Login = ({navigation}) =>  {
 
 
-
+    async function CreateAccount() {
+        try {
+    
+            navigation.replace("CriarConta")
+            
+        } catch (error) {
+            
+        }
+    }
 
 
 return (
@@ -20,7 +29,7 @@ return (
     
 <Container>
 
-
+<ContainerLogin>
 
             <Text>Login Screen</Text>
 
@@ -42,7 +51,7 @@ return (
              <ButtonLogin
              title=""
              >
-                <ButtonTitle>Entrar</ButtonTitle>
+                <ButtonTitle onPress={() => {navigation.replace("Main")}}>Entrar</ButtonTitle>
 
              </ButtonLogin>
 
@@ -55,11 +64,14 @@ return (
 <ContentAccount>
 
 <AccountText>Nao tem conta? 
-
-    <LinkBold> Crie uma conta agora!</LinkBold>
+    <ButtonCard onPress={() => {CreateAccount()}}>
+    <LinkBold > Crie uma conta agora!</LinkBold>
+    </ButtonCard>
 </AccountText>
 
 </ContentAccount>
+
+</ContainerLogin>
 </Container>
     
 )

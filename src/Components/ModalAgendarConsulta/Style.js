@@ -11,9 +11,11 @@ export const LevelSelectBox = styled.View`
 width: 88px;
 height: 40px;
 border-radius: 5px;
+justify-content: center;
+align-items: center;
 ${(props) => props.clickButtonR == true || props.clickButtonE == true || props.clickButtonU == true
       ? css`
-          border: 2px solid red;
+          border: 2px solid rgba(96, 191, 197, 1);
         `
       : css`
           border: none;
@@ -36,12 +38,26 @@ color: #FFFFFF;
 
 export const AlignLevel = styled.View`
 flex-direction: row;
-gap: 50px;
-width: 100%;
+gap: 34px;
+width: 90%;
 
 `
 export const BoxLevelAlign = styled.View`
-gap: 40px;
+gap: 10px;
 width: 100%;
 
+`
+
+export const AlignModal = styled.View`
+width: 100%;
+height: 518px;
+align-items: center;
+background-color: #FFFFFF;
+border-radius: 10px 10px 0px 0px;
+`
+
+export const AlignModalContent = styled.View`
+width: 90%;
+align-items: center;
+gap: 15px;
 `

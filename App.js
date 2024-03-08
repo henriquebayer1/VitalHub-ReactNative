@@ -41,9 +41,9 @@ if (!fontLoaded && !fontError) {
    <Stack.Navigator>
 
    <Stack.Screen
-    options={{title: "CriarConta"}}
-    name='CriarConta'
-    component={CriarConta}
+    options={{title: "Login"}}
+    name='Login'
+    component={Login}
     />
 
    <Stack.Screen
@@ -62,6 +62,14 @@ if (!fontLoaded && !fontError) {
     name='Navegacao'
     //Componente da Tela
     component={Navegacao}
+    />
+    <Stack.Screen
+    //Titulo da tela
+    options={{title: "CriarConta"}}
+    //nome da tela
+    name='CriarConta'
+    //Componente da Tela
+    component={CriarConta}
     />
 
     

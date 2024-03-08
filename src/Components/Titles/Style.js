@@ -13,4 +13,5 @@ export const TitleSelectDoctor = styled(Title)`
 export const TitleModalAgendarConsulta = styled(Title)`
   color: rgba(51, 48, 62, 1);
   align-self: flex-start;
+  margin-top: 20px;
 `

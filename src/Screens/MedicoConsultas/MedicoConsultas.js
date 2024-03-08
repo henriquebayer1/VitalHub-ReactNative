@@ -30,12 +30,14 @@ export const MedicoConsultas = ({navigation}) => {
 
 
   const Consultas = [
-    { id: 1, nome: "Lucas Lacerda", situacao: "pendente" },
-    { id: 2, nome: "Uiara Ambrosio", situacao: "cancelado" },
-    { id: 3, nome: "Silvia Ribeiro", situacao: "realizado" },
-    { id: 4, nome: "Tadeu LACERDA", situacao: "pendente" },
+    { id: 1, nome: "Lucas Lacerda", situacao: "pendente", tipo: "Paciente"},
+    { id: 2, nome: "Uiara Ambrosio", situacao: "cancelado", tipo: "Medico" },
+    { id: 3, nome: "Silvia Ribeiro", situacao: "realizado", tipo: "Paciente" },
+    { id: 4, nome: "Tadeu LACERDA", situacao: "pendente", tipo: "Paciente" },
   ];
+
   
+  const [user, setUser] = useState("Paciente")
 
   const [statusLista, setStatusLista] = useState("");
   const [activeIcon, setActiveIcon] = useState("agenda"); // Estado para armazenar o ícone ativo
@@ -50,9 +52,9 @@ export const MedicoConsultas = ({navigation}) => {
   const [statusLevel3, setStatusLevel3] = useState(false);
 
 return(
-<>
-<Container>
 
+<Container>
+{/* 
   <ModalAgendarConsulta
   clickButton1={statusLevel}
   clickButton2={statusLevel2 }
@@ -62,8 +64,10 @@ return(
   onPress3={() => {setStatusLevel3(true)}}
 
  
-  />
-{/* {showModalAppointment ? 
+  /> */}
+
+
+ {showModalAppointment ? 
 
 (<>
  <MedicoInsercaoProntuario
@@ -77,7 +81,7 @@ return(
 
 
       
-      <Container>
+
 
      
     <HeaderBackground>
@@ -140,7 +144,8 @@ return(
               nome={item.nome}
               situacao={item.situacao}
               onPressCancel={() => setShowModalCancel(true)}
-              onPressAppointment={() => setShowModalAppointment(true)}
+              onPressAppointment={user === "Paciente" ? () => setShowModalAppointment(true) : () => {navigation.replace("SelecionarClinica")}}
+             
             />
           )
         }
@@ -160,7 +165,7 @@ return(
 onPress={() => {navigation.navigate("SelecionarClinica")}}
 /></>):
 (<></>)}
- */}
+
 
 
 
@@ -186,10 +191,10 @@ onPress={() => {navigation.navigate("SelecionarClinica")}}
 </Footer> */}
 
 
-        </Container>
-         
+
+         </Container>
       
-</>
+
 
 
 )}

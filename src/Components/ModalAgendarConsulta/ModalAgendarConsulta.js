@@ -3,13 +3,15 @@ import {
   InputAlignMedicalRecordForm,
   LabelMedicalRecordForm,
 } from "../../Screens/MedicoInsercaoProntuario/Style";
-import { ButtonLogin, ButtonTitle } from "../Buttons/Style";
+import { ButtonLogin, ButtonLoginModalAgendarConsulta, ButtonTitle } from "../Buttons/Style";
 import { Container } from "../Container/Style";
 import { Input } from "../Input/Style";
 import { LinkBoldN } from "../Links/Style";
 import { TitleModalAgendarConsulta } from "../Titles/Style";
 import {
   AlignLevel,
+  AlignModal,
+  AlignModalContent,
   BoxLevelAlign,
   LevelSelectBox,
   LevelSelectBoxText,
@@ -19,7 +21,8 @@ import {
 
 export const ModalAgendarConsulta = ({ onPress, onPress1, onPress2, onPress3, clickButton = false, clickButton1 = false, clickButton2 = false, clickButton3 = false, }) => {
   return (
-    <>
+    <AlignModal>
+      <AlignModalContent>
       <TitleModalAgendarConsulta>Agendar Consulta</TitleModalAgendarConsulta>
 
       <BoxLevelAlign>
@@ -53,6 +56,19 @@ export const ModalAgendarConsulta = ({ onPress, onPress1, onPress2, onPress3, cl
 
         <Input placeholder="Informe a localizao" />
       </InputAlignMedicalRecordForm>
-    </>
+
+
+
+
+      <ButtonLoginModalAgendarConsulta >
+      <ButtonTitle>Confirmar</ButtonTitle>
+    </ButtonLoginModalAgendarConsulta>
+    
+
+    <ButtonCard>
+    <LinkBoldN >Cancelar</LinkBoldN>
+    </ButtonCard>
+    </AlignModalContent>
+    </AlignModal>
   );
 };

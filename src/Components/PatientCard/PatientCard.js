@@ -6,10 +6,11 @@ import { LinkBoldN, LinkBoldPatient } from "../Links/Style";
 export const PatientCardComponent = ({situacao ,
 onPressCancel,
 onPressAppointment,
-nome}) => {return(
+nome,
+tipo}) => {return(
 
 
-<PatientCardBox>
+<PatientCardBox tipo={tipo}>
       <AlignMedicalAppointment>
           <MedicalAppointmentImage source={require("../../Assets/MedicalAppointmentPatient.png")}/>
 
@@ -36,7 +37,7 @@ nome}) => {return(
             </ButtonCard>
           ) : (
             <ButtonCard onPress={onPressAppointment}>
-              <LinkBoldPatient situacao={situacao}>Ver Prontuário</LinkBoldPatient>
+              <LinkBoldPatient situacao={situacao} tipo={tipo}>Ver Prontuário</LinkBoldPatient>
             </ButtonCard>
           )}
     </PatientCardBox>
