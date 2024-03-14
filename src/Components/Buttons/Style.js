@@ -68,5 +68,5 @@ align-items: center;
 background-color: #49B3BA;
 position: fixed;
 left: 130px;
-top: 50px;
+bottom: 10px;
 `;

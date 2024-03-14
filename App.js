@@ -18,6 +18,8 @@ import { SelecionarClinica } from './src/Screens/SelecionarClinica/SelecionarCli
 import { SelecionarMedico } from './src/Screens/SelecionarMedico/SelecionarMedico';
 import { SelecionarData } from './src/Screens/SelecionarData/SelecionarData';
 import { Main } from './src/Screens/Main/Main';
+import Mapa from './src/Screens/Mapa/Map';
+import { LocalConsulta } from './src/Screens/LocalConsulta/LocalConsulta';
 
 
 
@@ -41,10 +43,23 @@ if (!fontLoaded && !fontError) {
    <Stack.Navigator>
 
    <Stack.Screen
+    options={{title: "LocalConsulta"}}
+    name='LocalConsulta'
+    component={LocalConsulta}
+    />
+
+   <Stack.Screen
     options={{title: "Login"}}
     name='Login'
     component={Login}
     />
+
+<Stack.Screen
+    options={{title: "Map"}}
+    name='Map'
+    component={Mapa}
+    />
+
 
    <Stack.Screen
     //Titulo da tela

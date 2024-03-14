@@ -1,4 +1,4 @@
-import { ScrollView } from "react-native"
+import { Modal, ScrollView } from "react-native"
 import { ButtonLogin, ButtonTitle } from "../../Components/Buttons/Style"
 import { Container } from "../../Components/Container/Style"
 import { Input } from "../../Components/Input/Style"
@@ -11,7 +11,7 @@ import { ButtonCard } from "../MedicoConsultas/Style"
 export const MedicoInsercaoProntuario = ({hideModal,}) => {
     
     return (
-      
+      <Modal>
         <ScrollView>
       
 <Container>
@@ -79,7 +79,7 @@ export const MedicoInsercaoProntuario = ({hideModal,}) => {
   </Container>
    </ScrollView>
 
-
+   </Modal>
 
 
 

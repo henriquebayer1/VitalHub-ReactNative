@@ -7,9 +7,10 @@ export const PatientCardComponent = ({situacao ,
 onPressCancel,
 onPressAppointment,
 nome,
-tipo}) => {return(
+tipo,
+onPressLocal}) => {return(
 
-
+<ButtonCard situacao={situacao} onPress={onPressLocal}>
 <PatientCardBox tipo={tipo}>
       <AlignMedicalAppointment>
           <MedicalAppointmentImage source={require("../../Assets/MedicalAppointmentPatient.png")}/>
@@ -41,5 +42,5 @@ tipo}) => {return(
             </ButtonCard>
           )}
     </PatientCardBox>
-
+    </ButtonCard>
 )}

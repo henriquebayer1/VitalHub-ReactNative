@@ -4,7 +4,7 @@ import styled from "styled-components";
 export const BoxAgendarConsulta = styled.View`
 width: 95%;
 height: 554px;
-background-color: #FFFFFF;
+background-color: red;
 border-radius: 10px;
 align-items: center;
 gap: 30px;

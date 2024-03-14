@@ -23,6 +23,7 @@ import { PatientCardComponent } from '../../Components/PatientCard/PatientCard';
 import { MedicoInsercaoProntuario } from '../MedicoInsercaoProntuario/MedicoInsercaoProntuario';
 import { ButtonSchedulleConsult } from '../../Components/Buttons/ButtonSchedulleConsult';
 import { ModalAgendarConsulta } from '../../Components/ModalAgendarConsulta/ModalAgendarConsulta';
+import { ModalViewLocal } from '../../Components/ModalViewLocal/ModalViewLocal';
 
 
 
@@ -44,6 +45,7 @@ export const MedicoConsultas = ({navigation}) => {
 
   //states para os Modais
   const [showModalCancel, setShowModalCancel] = useState(false);
+  const [showModalLocal, setShowModalLocal] = useState(false);
   const [showModalAppointment, setShowModalAppointment] = useState(false);
 
 
@@ -72,6 +74,16 @@ return(
 (<>
  <MedicoInsercaoProntuario
  hideModal={() => {setShowModalAppointment(false)}}
+ />
+
+</>) : 
+(<></>)}
+
+ {showModalLocal ? 
+
+(<>
+ <ModalViewLocal
+hideModal={() => {setShowModalLocal(false)}}
  />
 
 </>) : 
@@ -111,7 +123,7 @@ return(
           clickButton={statusLista === "pendente"}
           onPress={() => {setStatusLista("pendente");}}
           >
-            <ButtonTitleConsultas clickButton={statusLista === "realizado"}>Pendente</ButtonTitleConsultas>
+            <ButtonTitleConsultas clickButton={statusLista === "pendente"}>Pendente</ButtonTitleConsultas>
           </ButtonDocConsult>
 
  <ButtonDocConsult
@@ -131,7 +143,7 @@ return(
    setStatusLista("cancelado");
  }}
  >
-      <ButtonTitleConsultas clickButton={statusLista === "realizado"}>Realizados</ButtonTitleConsultas>
+      <ButtonTitleConsultas clickButton={statusLista === "cancelado"}>Cancelados</ButtonTitleConsultas>
   </ButtonDocConsult>
 </ButtonConsultasAlign>
 
@@ -141,6 +153,7 @@ return(
         renderItem={({ item }) =>
           statusLista === item.situacao && (
             <PatientCardComponent 
+              onPressLocal={() => {item.situacao === "pendente" ? (setShowModalLocal(true)) : (<></>) }}
               nome={item.nome}
               situacao={item.situacao}
               onPressCancel={() => setShowModalCancel(true)}
@@ -150,6 +163,9 @@ return(
           )
         }
       />
+      
+
+
       
 {showModalCancel ? 
 
