@@ -51,7 +51,8 @@ async function RecarregarViewMap() {
 accuracy: LocationAccuracy.Highest,
 timeInterval: 1000,
 distanceInterval: 1,
-    }, async (response) => { await setInitialPosition(response)
+    }, 
+    async (response) => { await setInitialPosition(response)
 
     mapReference.current?.animatedCamera({pitch: 60, center: response.coords})
     
@@ -68,7 +69,7 @@ distanceInterval: 1,
     <View style={styles.container}>
       {initialPosition != null ? (
         <MapView
-        ref={mapReference}
+          ref={mapReference}
           initialRegion={{
             latitude: initialPosition.coords.latitude,
             longitude: initialPosition.coords.longitude,

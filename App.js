@@ -20,6 +20,7 @@ import { SelecionarData } from './src/Screens/SelecionarData/SelecionarData';
 import { Main } from './src/Screens/Main/Main';
 import Mapa from './src/Screens/Mapa/Map';
 import { LocalConsulta } from './src/Screens/LocalConsulta/LocalConsulta';
+import { VizualizarPrescricao } from './src/Screens/VizualizarPrescricao/VizualizarPrescricao';
 
 
 
@@ -41,18 +42,24 @@ if (!fontLoaded && !fontError) {
 
 
    <Stack.Navigator>
-
    <Stack.Screen
-    options={{title: "LocalConsulta"}}
-    name='LocalConsulta'
-    component={LocalConsulta}
+    options={{title: "VizualizarPrescricao"}}
+    name='VizualizarPrescricao'
+    component={VizualizarPrescricao}
     />
-
+   
    <Stack.Screen
     options={{title: "Login"}}
     name='Login'
     component={Login}
     />
+
+<Stack.Screen
+    options={{title: "LocalConsulta"}}
+    name='LocalConsulta'
+    component={LocalConsulta}
+    />
+
 
 <Stack.Screen
     options={{title: "Map"}}

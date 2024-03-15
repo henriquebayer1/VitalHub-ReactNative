@@ -24,6 +24,15 @@ padding: 12px 8px 12px 8px;
 border-radius: 5px;
 margin-top: 10px;
 `
+export const ButtonCamera = styled(ButtonLogin)`
+width: 172px;
+height: 44px;
+background-color: #49B3BA;
+flex-direction: row;
+gap: 10px;
+justify-content: center;
+align-items: center;
+`
 export const ButtonLoginModalAgendarConsulta = styled(ButtonLogin)`
 margin-top: 110px;
 `
